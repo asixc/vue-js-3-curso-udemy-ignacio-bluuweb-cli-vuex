@@ -14,11 +14,18 @@
       :style="colotContador" 
     >{{ titulo }} {{ contador }}</h1>
     <button @click="accionIncrementarContador">Aumentar contador</button>
+    <disminuir />
+
+    <hr>
+    <boton-accion :estado="true"/>
+    <boton-accion :estado="false"/>
   </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
+import Disminuir from '../components/Disminuir.vue'
+import BotonAccion from '../components/BotonAccion.vue'
 export default {
   name: 'Home',
   data() {
@@ -27,6 +34,8 @@ export default {
     }
   },
   components: {
+    Disminuir,
+    BotonAccion
 
   },
   computed: {
